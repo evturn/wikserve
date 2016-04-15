@@ -4,8 +4,8 @@
   "description": "Search Wikipedia in monochrome",
   "main": "index.js",
   "scripts": {
-    "start": "watchify src -o build/bundle.js -t [ babelify --presets [ es2015 ] ]",
-    "build": "browserify src -o build/bundle.js -t [ babelify --presets [ es2015 ] ]",
+    "start": "watchify src -o dist/js/bundle.js -t [ babelify --presets [ es2015 ] ]",
+    "build": "browserify src -o dist/js/bundle.js -t [ babelify --presets [ es2015 ] ]",
     "static": "open index.html",
     "deploy": "gh-pages -d build"
   },
