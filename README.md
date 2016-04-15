@@ -1,3 +1,3 @@
 ## WikSERVE
 
-![image](https://github.com/evturn/wikserve/blob/master/assets/img/screenshot.png)
+![image](https://github.com/evturn/wikserve/blob/master/dist/img/screenshot.png)
