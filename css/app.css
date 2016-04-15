@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700);
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+  font-family: 'Ubuntu Mono', serif;
+}
+
+#app {
+  position: relative;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.search-field {
+  height: 40px;
+  width: 100%;
+  border: none;
+  font-size: 35px;
+  outline: none;
+  text-align: center;
+  font-family: 'Ubuntu Mono', serif;
+  background-color: transparent;
+  color: #00FF00;
+}
+
+.title {
+  color: #00FF00;
+  font-size: 70px;
+  font-weight: 500;
+  letter-spacing: -1.4px;
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+
+hr {
+  border: 1px solid #00FF00;
+}
+
+.result {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 25px;
+  transition: 0.3s;
+}
+
+.result:nth-child(odd) {
+  background-color: #00FF00;
+}
+
+.result:nth-child(odd) a {
+  color: #000000;
+}
+
+a {
+  transition: 0.3s;
+  text-decoration: none;
+  color: #00FF00;
+}
+
+@media(min-width: 768px) {
+  .search-field {
+    width: 600px;
+  }
+
+  .result:hover a {
+    color: #FF7E00;
+  }
+
+  .result:nth-child(odd):hover a {
+    color: #FF7E00;
+  }
+}
