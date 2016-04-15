@@ -31,7 +31,11 @@ function searchRequest(responses) {
 }
 
 function vtreeElements(results) {
-  return (0, _dom.h)('div', [(0, _dom.h)('h1', 'It is illegal to eat 18 sandwiches in 1 hour'), (0, _dom.h)('input', {
+  return (0, _dom.h)('div', [(0, _dom.h)('img', {
+    attributes: {
+      src: 'assets/img/wserve.png'
+    }
+  }), (0, _dom.h)('input', {
     className: 'search-field',
     attributes: { type: 'text' }
   }), (0, _dom.h)('hr'), (0, _dom.h)('div', results.map(function (result) {
