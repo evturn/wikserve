@@ -17333,7 +17333,7 @@ function searchBox(responses) {
     return responses.DOM.select('.search-field').events('input').debounce(300).map(function (e) {
       return e.target.value;
     }).filter(function (val) {
-      return val.length > 2;
+      return val.length && val.trim();
     }).map(function (term) {
       return apiUrl + term;
     });
@@ -17392,9 +17392,9 @@ function main(responses) {
       return (0, _dom.h)('div', [(0, _dom.h)('header', [(0, _dom.h)('h1', {
         className: 'title'
       }, 'WikSERVE')]), tree, (0, _dom.h)('hr'), (0, _dom.h)('div', {
+        id: 'results',
         className: 'results'
       }, results.map(function (result) {
-
         return (0, _dom.h)('div', {
           className: 'result'
         }, [(0, _dom.h)('a', {

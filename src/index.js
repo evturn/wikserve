@@ -37,9 +37,9 @@ function main(responses) {
           tree,
           h('hr'),
           h('div', {
+            id: 'results',
             className: 'results'
           }, results.map(result => {
-
             return h('div', {
               className: 'result'
             }, [

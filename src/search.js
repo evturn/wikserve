@@ -22,8 +22,8 @@ function searchBox(responses) {
         .events('input')
         .debounce(300)
         .map(e => e.target.value)
-        .filter(val => val.length > 2)
-        .map(term => apiUrl + term);
+        .filter(val => val.length && val.trim())
+        .map(term =>  apiUrl + term);
     }
   );
 
