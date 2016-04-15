@@ -17,9 +17,7 @@ function searchRequest(responses) {
 
 function vtreeElements(results) {
   return h('div', [
-    h('div', {
-      className: 'img'
-    }, [
+    h('header', [
       h('h1', {
         className: 'title'
       }, 'WikSERVE')

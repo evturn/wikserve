@@ -31,9 +31,7 @@ function searchRequest(responses) {
 }
 
 function vtreeElements(results) {
-  return (0, _dom.h)('div', [(0, _dom.h)('div', {
-    className: 'img'
-  }, [(0, _dom.h)('h1', {
+  return (0, _dom.h)('div', [(0, _dom.h)('header', [(0, _dom.h)('h1', {
     className: 'title'
   }, 'WikSERVE')]), (0, _dom.h)('input', {
     className: 'search-field',

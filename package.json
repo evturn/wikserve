@@ -1,20 +1,30 @@
 {
   "name": "wikserve",
   "version": "1.0.0",
-  "description": "",
+  "description": "Search Wikipedia in monochrome",
   "main": "index.js",
   "scripts": {
     "start": "watchify index.js -o bundle.js -t [ babelify --presets [ es2015 ] ]",
     "build": "browserify index.js -o bundle.js -t [ babelify --presets [ es2015 ] ]",
     "static": "open index.html"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:evturn/wikserve.git"
+  },
+  "keywords": [
+    "autocomplete",
+    "wikipedia",
+    "cyclejs",
+    "rxjs"
+  ],
   "author": "Evan Turner <ev@evturn.com>",
   "license": "ISC",
   "dependencies": {
     "@cycle/core": "^6.0.3",
     "@cycle/dom": "^9.4.0",
     "@cycle/jsonp": "^5.0.1",
+    "gh-pages": "^0.11.0",
     "rx": "^4.1.0"
   },
   "devDependencies": {
