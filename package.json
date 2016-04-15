@@ -6,7 +6,8 @@
   "scripts": {
     "start": "watchify index.js -o bundle.js -t [ babelify --presets [ es2015 ] ]",
     "build": "browserify index.js -o bundle.js -t [ babelify --presets [ es2015 ] ]",
-    "static": "open index.html"
+    "static": "open index.html",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,6 @@
     "@cycle/core": "^6.0.3",
     "@cycle/dom": "^9.4.0",
     "@cycle/jsonp": "^5.0.1",
-    "gh-pages": "^0.11.0",
     "rx": "^4.1.0"
   },
   "devDependencies": {
