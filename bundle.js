@@ -15,14 +15,28 @@ var _dom2 = _interopRequireDefault(_dom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function vtreeElements(results) {
+  return (0, _dom.h)('div', [(0, _dom.h)('h1', 'It is illegal to eat 18 sandwiches in 1 hour'), (0, _dom.h)('input', {
+    className: 'search-field',
+    attributes: {
+      type: 'text'
+    }
+  }), (0, _dom.h)('hr'), (0, _dom.h)('div', results.map(function (result) {
+
+    return (0, _dom.h)('div', [(0, _dom.h)('a', {
+      href: WIKI_URL + result.title
+    }, result.title)]);
+  }))]);
+}
+
 function main(responses) {
   return {
-    DOM: _rx2.default.Observable.just(_dom2.default.h('span', 'Man, those torillas smell good.'))
+    DOM: _rx2.default.Observable.just((0, _dom.h)('span', 'Man, those torillas smell good.'))
   };
 }
 
 var drivers = {
-  DOM: _dom2.default.makeDOMDriver('#container')
+  DOM: _dom2.default.makeDOMDriver('#app')
 };
 
 _core2.default.run(main, drivers);
