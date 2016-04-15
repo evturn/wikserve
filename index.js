@@ -1,15 +1,26 @@
 import Rx from 'rx';
 import Cycle from '@cycle/core';
-import CycleDOM, { h } from '@cycle/dom';
+import CycleDOM, { h, makeDOMDriver } from '@cycle/dom';
+import { makeJSONPDriver } from '@cycle/jsonp';
+
+const WIKI_URL = 'https://en.wikipedia.org/wiki/';
+const API_URL = 'https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=';
+
+function searchRequest(responses) {
+  return responses.DOM.select('.search-field')
+    .events('input')
+    .debounce(300)
+    .map(e => e.target.value)
+    .filter(val => val.length > 2)
+    .map(search => API_URL + search);
+}
 
 function vtreeElements(results) {
   return h('div', [
     h('h1', 'It is illegal to eat 18 sandwiches in 1 hour'),
     h('input', {
       className: 'search-field',
-      attributes: {
-        type: 'text'
-      }
+      attributes: { type: 'text' }
     }),
     h('hr'),
     h('div', results.map(result => {
@@ -24,13 +35,22 @@ function vtreeElements(results) {
 }
 
 function main(responses) {
+  const vtree$ = responses.JSONP
+    .filter(res$ => res$.request.indexOf(API_URL) === 0)
+    .mergeAll()
+    .pluck('query', 'search')
+    .startWith([])
+    .map(vtreeElements);
+
   return {
-    DOM: Rx.Observable.just(h('span', 'Man, those torillas smell good.'))
+    DOM: vtree$,
+    JSONP: searchRequest(responses)
   };
 }
 
 const drivers = {
-  DOM: CycleDOM.makeDOMDriver('#app')
+  DOM: makeDOMDriver('#app'),
+  JSONP: makeJSONPDriver()
 };
 
 Cycle.run(main, drivers);
