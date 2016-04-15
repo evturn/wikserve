@@ -17,19 +17,25 @@ function searchRequest(responses) {
 
 function vtreeElements(results) {
   return h('div', [
-    h('img', {
-      attributes: {
-        src: 'assets/img/wserve.png'
-      }
-    }),
+    h('div', {
+      className: 'img'
+    }, [
+      h('h1', {
+        className: 'title'
+      }, 'WikSERVE')
+    ]),
     h('input', {
       className: 'search-field',
       attributes: { type: 'text' }
     }),
     h('hr'),
-    h('div', results.map(result => {
+    h('div', {
+      className: 'results'
+    }, results.map(result => {
 
-      return h('div', [
+      return h('div', {
+        className: 'result'
+      }, [
         h('a', {
           href: WIKI_URL + result.title
         }, result.title)

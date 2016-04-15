@@ -31,16 +31,20 @@ function searchRequest(responses) {
 }
 
 function vtreeElements(results) {
-  return (0, _dom.h)('div', [(0, _dom.h)('img', {
-    attributes: {
-      src: 'assets/img/wserve.png'
-    }
-  }), (0, _dom.h)('input', {
+  return (0, _dom.h)('div', [(0, _dom.h)('div', {
+    className: 'img'
+  }, [(0, _dom.h)('h1', {
+    className: 'title'
+  }, 'WikSERVE')]), (0, _dom.h)('input', {
     className: 'search-field',
     attributes: { type: 'text' }
-  }), (0, _dom.h)('hr'), (0, _dom.h)('div', results.map(function (result) {
+  }), (0, _dom.h)('hr'), (0, _dom.h)('div', {
+    className: 'results'
+  }, results.map(function (result) {
 
-    return (0, _dom.h)('div', [(0, _dom.h)('a', {
+    return (0, _dom.h)('div', {
+      className: 'result'
+    }, [(0, _dom.h)('a', {
       href: WIKI_URL + result.title
     }, result.title)]);
   }))]);
