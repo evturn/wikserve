@@ -6,7 +6,7 @@
   "scripts": {
     "start": "watchify src -o dist/js/bundle.js -t [ babelify --presets [ es2015 ] ]",
     "build": "browserify src -o dist/js/bundle.js -t [ babelify --presets [ es2015 ] ]",
-    "static": "open index.html",
+    "static": "open dist/index.html",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
